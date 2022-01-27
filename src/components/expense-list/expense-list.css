@@ -1,0 +1,41 @@
+.expense-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.card-container {
+  background-color: #000000;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  border-radius: 10px;
+  margin-bottom: 1em;
+}
+
+.money-delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trashcan {
+  width: 20px;
+  padding-left: 1em;
+}
+
+.intro-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.moment-info {
+  color: gray;
+  margin: 0;
+}

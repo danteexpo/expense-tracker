@@ -1,0 +1,14 @@
+.back-container {
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-img {
+  padding-right: 0.5em;
+}
+
+.back-text {
+  text-decoration: none;
+}

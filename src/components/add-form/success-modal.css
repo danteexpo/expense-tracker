@@ -1,0 +1,19 @@
+.btn-img {
+  width: 20px;
+  margin-right: 0.5em;
+}
+
+.modal-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 120px;
+  padding: 1em;
+}
+
+.btn-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
