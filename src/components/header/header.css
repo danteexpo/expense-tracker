@@ -2,8 +2,15 @@
   background-color: #000000;
   padding: 2em 0 1em;
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-notbg {
+  width: 90%;
+  display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -44,8 +51,10 @@
 }
 
 @media (min-width: 375px) {
-  .header-container {
+  .header-notbg {
     flex-direction: row;
+  }
+  .header-container {
     padding: 2em 0;
   }
   .add-img {

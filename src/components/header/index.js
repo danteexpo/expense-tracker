@@ -20,18 +20,20 @@ const Header = () => {
 
   return (
     <header className="header-container">
-      <div className='header'>
-        <Link to='/'>
-          <img src={favicon} alt="" className='header-logo' />
-        </Link>
-        <div className='search-container'>
-          <input type="text" placeholder='Search for expenses...' value={input} onChange={handleInput} className='header-input'/>
-          <img src={search} alt="" className='search-img' />
+      <div className='header-notbg'>
+        <div className='header'>
+          <Link to='/'>
+            <img src={favicon} alt="" className='header-logo' />
+          </Link>
+          <div className='search-container'>
+            <input type="text" placeholder='Search for expenses...' value={input} onChange={handleInput} className='header-input'/>
+            <img src={search} alt="" className='search-img' />
+          </div>
         </div>
+        <Link to='/add'>
+          <img src={add} alt="" className='add-img' />
+        </Link>
       </div>
-      <Link to='/add'>
-        <img src={add} alt="" className='add-img' />
-      </Link>
     </header>
   );
 };
