@@ -1,6 +1,6 @@
 import { useReducer } from 'react';
 import { db, timestamp } from '../firebase/config';
-import { collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc, deleteDoc, doc } from 'firebase/firestore';
 
 let initialState = {
   document: null,
@@ -23,6 +23,14 @@ const firestoreReducer = (state, action) => {
       return {
         ...state,
         document: action.payload,
+        isPending: false,
+        error: null,
+        success: true,
+      };
+    case 'DELETED_DOCUMENT':
+      return {
+        ...state,
+        document: null,
         isPending: false,
         error: null,
         success: true,
@@ -59,7 +67,16 @@ export const useFirestore = (myCollection) => {
       });
   };
 
-  const deleteDocument = (id) => {};
+  const deleteDocument = async (myCollection, id) => {
+    dispatch({ type: 'IS_PENDING' });
+    await deleteDoc(doc(db, myCollection, id))
+      .then(() => {
+        dispatch({ type: 'DELETED_DOCUMENT' });
+      })
+      .catch((err) => {
+        dispatch({ type: 'ERROR', payload: err.message });
+      });
+  };
 
   return { addDocument, deleteDocument, state };
 };

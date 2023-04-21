@@ -1,13 +1,23 @@
 import { useState, useEffect } from 'react';
 import { db } from '../firebase/config';
-import { collection, onSnapshot } from 'firebase/firestore';
+import {
+  collection,
+  onSnapshot,
+  orderBy,
+  query,
+  where,
+} from 'firebase/firestore';
 
-export const useCollection = (myCollection) => {
+export const useCollection = (myCollection, myQuery, myOrder) => {
   const [documents, setDocuments] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     let ref = collection(db, myCollection);
+
+    if (myQuery && myOrder) {
+      ref = query(ref, where(...myQuery), orderBy(...myOrder));
+    }
 
     onSnapshot(
       ref,
@@ -25,5 +35,5 @@ export const useCollection = (myCollection) => {
     );
   }, [myCollection]);
 
-  return { documents };
+  return { documents, error };
 };

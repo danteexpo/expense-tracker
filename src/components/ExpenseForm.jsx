@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 // hooks
 import { useFirestore } from '../hooks/useFirestore';
 
-const TransactionForm = ({ uid }) => {
+const ExpenseForm = ({ uid }) => {
   const [name, setName] = useState('');
   const [amount, setAmount] = useState('');
 
-  const { addDocument, state } = useFirestore('transactions');
+  const { addDocument, state } = useFirestore('expenses');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,7 +27,7 @@ const TransactionForm = ({ uid }) => {
   return (
     <>
       <h3 className="text-[#1f9751] mb-5 font-bold text-2xl xl:text-3xl">
-        Add a transaction
+        Add an expense
       </h3>
       <form className="p-5 bg-[#1f9751]" onSubmit={handleSubmit}>
         <label className="mt-0 mx-auto mb-5 block text-white">
@@ -58,4 +58,4 @@ const TransactionForm = ({ uid }) => {
   );
 };
 
-export default TransactionForm;
+export default ExpenseForm;
