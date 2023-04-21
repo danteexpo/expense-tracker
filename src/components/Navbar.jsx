@@ -1,7 +1,7 @@
 // react-router-dom
 import { Link } from 'react-router-dom';
 // img
-import expenseTrackerNavbar from '../../public/expense-tracker-navbar.svg';
+import expenseTrackerNavbar from '../assets/expense-tracker-navbar.svg';
 // auth
 import { useAuthContext } from '../hooks/useAuthContext';
 // hooks
@@ -20,17 +20,22 @@ const Navbar = () => {
         {!isPending && (
           <>
             {user ? (
-              <li className="text-white font-medium" onClick={logout}>
-                <a
-                  href="#_"
-                  className="px-5 py-1 relative group overflow-hidden font-medium bg-[#1f9751] text-white inline-block"
+              <>
+                <li
+                  className="ml-4 md:ml-8 text-white font-medium"
+                  onClick={logout}
                 >
-                  <span className="absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0 bg-white group-hover:h-full opacity-100"></span>
-                  <span className="relative group-hover:text-[#1f9751]">
-                    Logout
-                  </span>
-                </a>
-              </li>
+                  <a
+                    href="#_"
+                    className="px-5 py-1 relative group overflow-hidden font-medium bg-[#1f9751] text-white inline-block"
+                  >
+                    <span className="absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0 bg-white group-hover:h-full opacity-100"></span>
+                    <span className="relative group-hover:text-[#1f9751]">
+                      Logout
+                    </span>
+                  </a>
+                </li>
+              </>
             ) : (
               <>
                 <li className="text-white font-medium">

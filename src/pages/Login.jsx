@@ -1,7 +1,7 @@
 import { useState } from 'react';
 // img
-import eyeSee from '../../public/eye-see.svg';
-import eyeHide from '../../public/eye-hide.svg';
+import eyeSee from '../assets/eye-see.svg';
+import eyeHide from '../assets/eye-hide.svg';
 // hooks
 import useLogin from '../hooks/useLogin';
 
